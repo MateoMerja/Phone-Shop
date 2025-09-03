@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap');
+/* Navigation Bar */
+.backgCol{
+  background-color: rgb(72, 160, 237);
+  height: 60px;
+}
+.navText{
+  font-family:'Arial';
+  font-weight: 700;
+  font-size: 15px;
+}
