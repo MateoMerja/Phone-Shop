@@ -1,48 +1,108 @@
-import React from 'react'
-import { Navbar, Nav, Container, NavDropdown, FormControl, InputGroup } from 'react-bootstrap'
-import img1 from '../images/logo.png'
-import menu from '../images/menu.svg'
-import searchIcon from '../images/search.svg'
+import React, { useState } from "react";
+import { Navbar, Container, InputGroup, FormControl, Nav } from "react-bootstrap";
+import img1 from "../images/logo.png";
+import menu from "../images/menu.svg";
+import closeIcon from "../images/close.png";
+import searchIcon from "../images/search.svg";
 
 const NavigationBar = () => {
-     return (
-    <Navbar expand="lg" className="backgCol">
-      <Container fluid>
-        <Navbar.Brand href="#home"><img src={img1} style={{ height: '170px', width: '180px' }} alt="logo" /></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-               {/* Butoni për hapje menuje në telefon */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <img src={menu} alt="Menu" style={{ width: "30px", height: "40px" }} />
-        </Navbar.Toggle>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
 
-        {/* Menuja që mbyllet/hapet */}
-        <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
-          {/* Kuti kërkimi */}
-        <InputGroup className="me-3 custom-search my-2 my-md-0" style={{ maxWidth: '200px' }}>
-            <FormControl placeholder="Search" aria-label="Search" />
-            <InputGroup.Text>
-              <img src={searchIcon} alt="search" style={{ width: '16px', height: '16px' }} />
-            </InputGroup.Text>
-          </InputGroup>
-          <Nav className="ms-auto links" >
-            <Nav.Link href="#home" className='link'>Home</Nav.Link>
-            <Nav.Link href="#link" className='link'>About</Nav.Link>
-            <Nav.Link href="#link" className='link'>Contact</Nav.Link>
-            <NavDropdown title={<img src={menu} alt='Menu' style={{ width: "30px", height: "40px" }}/>}  id="basic-nav-dropdown"className='no-arrow menuStyle'align={"end"} >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+  const handleOpen = () => {
+    setMenuOpen(true);
+    setClosing(false);
+  };
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setClosing(false);
+    }, 500); // sa zgjat transition te CSS
+  };
+
+  return (
+    <>
+      <Navbar className="backgCol">
+        <Container fluid className="d-flex justify-content-between align-items-center">
+          {/* Logo */}
+          <Navbar.Brand href="#home" className="d-flex align-items-center">
+            <img
+              src={img1}
+              alt="logo"
+              className="navbar-logo"
+              style={{ height: "170px", width: "180px" }}
+            />
+          </Navbar.Brand>
+
+          {/* Nav + Search (desktop/tablet/laptop) */}
+          <Nav className="ms-auto links d-flex align-items-center">
+            <InputGroup className="me-3 custom-search" style={{ maxWidth: "200px" }}>
+              <FormControl placeholder="Search" aria-label="Search" />
+              <InputGroup.Text>
+                <img src={searchIcon} alt="search" style={{ width: "16px", height: "16px" }} />
+              </InputGroup.Text>
+            </InputGroup>
+            <Nav.Link href="#home" className="link">
+              Home
+            </Nav.Link>
+            <Nav.Link href="#about" className="link">
+              About
+            </Nav.Link>
+            <Nav.Link href="#contact" className="link">
+              Contact
+            </Nav.Link>
+            <Nav.Link href="#login" className="link">
+              Log In
+            </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-}
 
-export default NavigationBar
+          {/* Burger menu gjithmonë i dukshëm */}
+          <button className="custom-menu-btn" onClick={handleOpen}>
+            <img src={menu} alt="Menu" style={{ width: "30px", height: "30px" }} />
+          </button>
+        </Container>
+      </Navbar>
+
+      {/* Sidebar + Overlay */}
+      {menuOpen && (
+        <div
+          className={`sidebar-overlay ${closing ? "closing" : ""}`}
+          onClick={handleClose}
+        >
+          <div
+            className={`sidebar-menu ${closing ? "closing" : ""}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="menu-header">
+              <h5>Menu</h5>
+              <button className="close-btn" onClick={handleClose}>
+                <img src={closeIcon} alt="close" style={{ width: "25px", height: "25px" }} />
+              </button>
+            </div>
+
+            <ul className="menu-links">
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Oferta</li>
+              <li>Log In</li>
+            </ul>
+
+            <div className="menu-search">
+              <InputGroup>
+                <FormControl placeholder="Search" aria-label="Search" />
+                <InputGroup.Text>
+                  <img src={searchIcon} alt="search" style={{ width: "16px", height: "16px" }} />
+                </InputGroup.Text>
+              </InputGroup>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default NavigationBar;
