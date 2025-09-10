@@ -173,6 +173,7 @@
   .menu-header {
     justify-content: flex-start;
     position: relative;
+    
   }
   
   .menu-header .close-btn img {
@@ -184,7 +185,7 @@
     font-size: 16px;
   }
 
-  /* X sipër djathtas */
+
   .menu-header .close-btn {
     position: absolute;
     top: 0;
@@ -194,7 +195,7 @@
 
   /* Search bar më i vogël */
   .menu-search input {
-    font-size: 14px;
+    font-size: 10px;
     padding: 5px 10px;
   }
 

@@ -1,0 +1,22 @@
+.page-container {
+  max-width: 900px;
+  margin: 100px auto 50px auto; /* hapësirë lart për të mos u mbuluar nga header/footer */
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.page-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.page-container p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+}

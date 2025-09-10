@@ -4,7 +4,7 @@ import img1 from "../images/logo.png";
 import menu from "../images/menu.svg";
 import closeIcon from "../images/close.png";
 import searchIcon from "../images/search.svg";
-
+import "../Css/NavigationCss.css";
 const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [closing, setClosing] = useState(false);
@@ -47,9 +47,6 @@ const NavigationBar = () => {
             <Nav.Link href="#home" className="link">
               Home
             </Nav.Link>
-            <Nav.Link href="#about" className="link">
-              About
-            </Nav.Link>
             <Nav.Link href="#contact" className="link">
               Contact
             </Nav.Link>
@@ -78,7 +75,7 @@ const NavigationBar = () => {
             <div className="menu-header">
               <h5>Menu</h5>
               <button className="close-btn" onClick={handleClose}>
-                <img src={closeIcon} alt="close" style={{ width: "25px", height: "25px" }} />
+                <img src={closeIcon} alt="close" />
               </button>
             </div>
 
@@ -86,8 +83,11 @@ const NavigationBar = () => {
               <li>Home</li>
               <li>About</li>
               <li>Contact</li>
-              <li>Oferta</li>
               <li>Log In</li>
+              <li>Telefona</li>
+              <li>Tablet</li>
+              <li>Laptop</li>
+              
             </ul>
 
             <div className="menu-search">
