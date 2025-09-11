@@ -1,0 +1,57 @@
+/* RefundPolicy.css */
+
+.refund-section {
+  background: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.refund-card {
+  border-radius: 1rem;
+  background: #ffffff;
+  animation: fadeIn 1s ease forwards;
+}
+
+.refund-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #9333ea;
+}
+
+.refund-updated {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.refund-block h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.refund-block p, .refund-block ul {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.refund-block ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .refund-title {
+    font-size: 1.5rem;
+  }
+
+  .refund-block h3 {
+    font-size: 1.1rem;
+  }
+}
