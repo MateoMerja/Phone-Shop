@@ -8,7 +8,7 @@ import img2 from '../images/logo.png';
 import '../Css/FooterCss.css';
 const FooterWeb = () => { 
   return ( 
-  <Container fluid className="bg-dark text-white mt-5" style={{ position: 'fixed', bottom: '0', width: '100%',}}>
+  <Container fluid className="bg-dark text-white mt-5">
      <footer className="footer mt-auto"> 
       <Row className="footer-container d-flex"> 
         <Col xs={12} md={3} className="text-center text-md-start"> 
@@ -40,10 +40,10 @@ const FooterWeb = () => {
           <div className="footer-right"> 
            <h4>Social Media</h4> 
             <div className="social-links"> 
-             <a href="#facebook"><img src={facebook} alt="Facebook" style={{ width:'40px', height:'35px' }}/></a> 
+             <a href="#facebook"><img src={facebook} alt="Facebook" style={{  width:'40px', height:'39px' }}/></a> 
              <a href="#twitter"><img src={twitter} style={{ width:'50px', height:'40px'}} /></a> 
-             <a href="#instagram"><img src={instagram} style={{ width: '50px', height: '40px' }} /></a> 
-             <a href="#tiktok"><img src={tiktok} style={{ width: '55px', height: '45px' }} /></a> 
+             <a href="#instagram"><img src={instagram} style={{ width: '50px', height: '43px'  }} /></a> 
+             <a href="#tiktok"><img src={tiktok} style={{width: '55px', height: '45px' }} /></a> 
             </div> 
           </div> 
         </Col> 
