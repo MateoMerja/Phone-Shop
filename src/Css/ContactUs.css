@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.contact-section {
+background: #f5f7fa;
+font-family: 'Poppins', sans-serif;
+}
+
+
+.contact-card {
+background: linear-gradient(135deg, #5e57e0, #03c2b6);
+border-radius: 1rem;
+}
+
+
+.social-icon {
+color: #fff;
+opacity: 0.8;
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.social-icon:hover {
+opacity: 1;
+transform: scale(1.1);
+}
+
+
+.btn-animate {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-animate:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+.fade-in {
+animation: fadeIn 1s ease forwards;
+opacity: 0;
+}
+.fade-in.delay-2 {
+animation-delay: 0.5s;
+}
+
+
+.slide-up {
+animation: slideUp 0.8s ease forwards;
+opacity: 0;
+}
+.contact-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px; 
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+to { opacity: 1; }
+}
+
+
+@keyframes slideUp {
+from { transform: translateY(30px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+
+@media (max-width: 767px) {
+.contact-card, .slide-up {
+border-radius: 0.75rem;
+}
+}

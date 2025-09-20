@@ -1,0 +1,211 @@
+/* Navbar background dhe layout */
+.backgCol {
+  background-color: rgb(72, 160, 237);
+  height: 70px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Linket */
+.links .nav-link,
+.links .link {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  margin: 0 5px;
+  padding: 14px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.links .link:hover,
+.links .link:focus {
+  background-color: rgb(84, 168, 241);
+  color: #fff;
+}
+
+/* Search bar */
+.custom-search .form-control {
+  border-radius: 20px 0 0 20px;
+  border: none;
+  box-shadow: none;
+}
+.custom-search .input-group-text {
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+/* Burger menu (gjithmonë i dukshëm) */
+.custom-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Sidebar overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.sidebar-overlay.closing {
+  opacity: 0;
+}
+
+/* Sidebar */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background-color: #000;
+  color: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+    animation: slideIn 0.5s ease-in-out;
+}
+.sidebar-menu.closing {
+  transform: translateX(100%);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.menu-header h5 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.menu-links li {
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-links li:hover {
+  color: rgb(72, 160, 237);
+}
+
+.menu-search {
+  margin-top: auto;
+}
+
+.menu-search input {
+  border-radius: 20px;
+  border: none;
+  padding: 6px 12px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Telefoni (≤425px) → vetëm logo + burger */
+@media screen and (max-width: 425px) {
+  .links,
+  .custom-search {
+    display: none !important;
+  }
+
+  .menu-header .close-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+  /* Sidebar më e gjerë (mbulon më shumë ekranin) */
+  .sidebar-menu {
+    width: 40%;
+    padding: 15px;
+  }
+
+  /* Menu header -> titulli "Menu" dhe X të jenë sipër */
+  .menu-header {
+    justify-content: flex-start;
+    position: relative;
+    
+  }
+  
+  .menu-header .close-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+  .menu-header h5 {
+    font-size: 16px;
+  }
+
+
+  .menu-header .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+  }
+
+  /* Search bar më i vogël */
+  .menu-search input {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .menu-search .input-group-text {
+    padding: 5px 10px;
+  }
+
+  .menu-search {
+    width: 90%;
+    margin: 15px auto;
+  }
+}
+

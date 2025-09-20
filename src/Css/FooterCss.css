@@ -1,0 +1,87 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Footer styles */
+.footer {
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  width: 100%;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  text-align: center; /* titujt qendër */
+}
+
+/* Linket nën Company & Products */
+.footer ul {
+  list-style: none;       /* hiq pikat */
+  margin: 0;
+  padding: 0;
+  text-align: center;     /* qendrojnë në mes */
+}
+
+.footer ul li {
+  margin: 6px 0;
+}
+
+.footer ul li a {
+  text-decoration: none;  /* hiq underline */
+  color: #ccc;            /* ngjyrë gri */
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+  color: #fff;            /* bardhë kur kalon me mouse */
+}
+
+/* Social Media icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.paragraph {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #999;
+}
+
+/* Responsive for mobile */
+@media (max-width: 425px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    margin-bottom: 20px;
+  }
+
+  .footer img {
+    height: 120px;
+    width: 130px;
+    margin-bottom: 15px;
+  }
+}
