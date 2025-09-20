@@ -1,0 +1,174 @@
+.login-component {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 80vh; 
+}
+
+/* Container */
+/* Login box */
+.login-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+  transition: transform 0.3s ease; /* për animacion të butë */
+}
+
+/* Efekti i hover njësoj si tek SignUp */
+.login-box:hover {
+  transform: translateY(-5px);
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Input fields */
+.input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon input {
+  width: 100%;
+  height: 48px;
+  padding: 0 40px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.input-icon input:focus {
+  border-color: #4b7bec;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(75, 123, 236, 0.3);
+}
+
+/* Ikona majtas/djathtas */
+.icon-left {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.icon-right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.icon-right:hover {
+  opacity: 1;
+}
+
+/* Checkbox "Remember Me" */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+/* Butoni kryesor */
+.remember-me + .login {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+ background: linear-gradient(135deg, #4b7bec, #20c997);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.remember-me + .login:hover {
+  background: linear-gradient(135deg, #3867d6, #17a589);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Tekst poshtë me link */
+.login-box p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Linket e SignUp / LogIn */
+.toggle-link {
+  color: #4b7bec;
+  font-weight: 600;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.toggle-link:hover {
+  color: #20c997;
+  text-decoration: none;
+  font-weight: 700;
+}
+.login-box p > .toggle-link:hover {
+  color: #4b7bec;
+  font-weight: 700;
+  text-decoration: none; /* gjithmonë pa underline */
+  margin-left: 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Hover ndryshon vetëm ngjyrën */
+.login-box p > .toggle-link:hover {
+  color: #20c997;
+}
+/* Animacion */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+  .login-box {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 30px;
+  }
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Background navbar */
+.backgCol {
+  background-color: rgb(72, 160, 237); /* blu */
+  height: 60px;
+}
+
+/* Stilizimi i linkëve */
+.navText {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff !important;
+  margin: 0 5px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navText:hover,
+.navText:focus {
+  background-color: rgb(84, 168, 241);
+  color: #fff !important;
+}
+
+/* Kutia e kuqe e menuse */
+.redBox {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiq shigjetën e NavDropdown */
+.no-arrow .dropdown-toggle::after {
+  display: none;
+}
+/* Searchbar më smooth */
+.custom-search .form-control {
+  border-radius: 20px 0 0 20px; /* kënde të rrumbullakosura majtas */
+  border: none;
+  box-shadow: none;
+}
+
+.custom-search .input-group-text {
+  border-radius: 0 20px 20px 0; /* kënde të rrumbullakosura djathtas */
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+/* Opsionale: efekt kur fokusohet */
+.custom-search .form-control:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(72, 160, 237, 0.7);
+}
