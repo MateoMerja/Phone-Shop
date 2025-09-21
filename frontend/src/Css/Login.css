@@ -21,10 +21,6 @@
   transition: transform 0.3s ease; /* për animacion të butë */
 }
 
-/* Efekti i hover njësoj si tek SignUp */
-.login-box:hover {
-  transform: translateY(-5px);
-}
 
 .login-box h2 {
   margin-bottom: 25px;
@@ -53,11 +49,6 @@
   background: #f9f9f9;
 }
 
-.input-icon input:focus {
-  border-color: #4b7bec;
-  background: #fff;
-  box-shadow: 0 0 6px rgba(75, 123, 236, 0.3);
-}
 
 /* Ikona majtas/djathtas */
 .icon-left {
@@ -95,7 +86,8 @@
 }
 
 .remember-me input {
-  margin-right: 8px;
+  margin-right: 8px; 
+  accent-color: rgb(48, 44, 44);
 }
 
 /* Butoni kryesor */
@@ -104,7 +96,7 @@
   height: 48px;
   border: none;
   border-radius: 10px;
- background: linear-gradient(135deg, #4b7bec, #20c997);
+  background: linear-gradient(135deg, #282b33, #079369);
   color: white;
   font-size: 16px;
   font-weight: 500;
@@ -114,7 +106,7 @@
 
 
 .remember-me + .login:hover {
-  background: linear-gradient(135deg, #3867d6, #17a589);
+  background: linear-gradient(135deg, #282b33, #17a589);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
@@ -128,22 +120,17 @@
 
 /* Linket e SignUp / LogIn */
 .toggle-link {
-  color: #4b7bec;
+  color: #38393a;
   font-weight: 600;
   transition: 0.3s;
   text-decoration: none;
   margin-left: 5px;
   cursor: pointer;
 }
-.toggle-link:hover {
-  color: #20c997;
-  text-decoration: none;
-  font-weight: 700;
-}
 .login-box p > .toggle-link:hover {
-  color: #4b7bec;
+  color: #282828;
   font-weight: 700;
-  text-decoration: none; /* gjithmonë pa underline */
+  text-decoration: underline; 
   margin-left: 5px;
   cursor: pointer;
   transition: color 0.3s;
@@ -151,7 +138,7 @@
 
 /* Hover ndryshon vetëm ngjyrën */
 .login-box p > .toggle-link:hover {
-  color: #20c997;
+  color: #2a2a2a;
 }
 /* Animacion */
 @keyframes fadeIn {

@@ -1,7 +1,6 @@
 import React from "react"; 
 import { Container, Row, Col } from "react-bootstrap"; 
 import facebook from '../images/facebook.png'; 
-import twitter from '../images/twitter.png'; 
 import instagram from '../images/instagram.png'; 
 import tiktok from '../images/tiktok.png'; 
 import img2 from '../images/logo.png'; 
@@ -18,6 +17,8 @@ const FooterWeb = () => {
           <div className="footer-left"> 
            <h4>About Us</h4>
             <ul className="/company-links"> 
+           
+             <li><a href="/aboutUs">About Us</a></li>
              <li><a href="/refund-policy">Refund Policy</a></li>
              <li><a href="/privacy-policy">Privacy Policy</a></li>
              <li><a href="/terms-of-service">Terms of Service</a></li>
@@ -41,7 +42,6 @@ const FooterWeb = () => {
            <h4>Social Media</h4> 
             <div className="social-links"> 
              <a href="#facebook"><img src={facebook} alt="Facebook" style={{  width:'40px', height:'39px' }}/></a> 
-             <a href="#twitter"><img src={twitter} style={{ width:'50px', height:'40px'}} /></a> 
              <a href="#instagram"><img src={instagram} style={{ width: '50px', height: '43px'  }} /></a> 
              <a href="#tiktok"><img src={tiktok} style={{width: '55px', height: '45px' }} /></a> 
             </div> 

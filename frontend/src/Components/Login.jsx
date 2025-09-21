@@ -37,7 +37,7 @@ const Login = ({ togglePage }) => {
           </div>
           <div className="remember-me">
             <input type="checkbox" id="rememberMe" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)}/>
-            <label htmlFor="rememberMe">Remember Me</label>
+            <label htmlFor="rememberMe" style={{color:"#444"}}>Remember Me</label>
           </div>
           <button type="submit" className="login">Login</button>
         </form>

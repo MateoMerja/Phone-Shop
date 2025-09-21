@@ -1,11 +1,13 @@
 /* Navbar background dhe layout */
 .backgCol {
-  background-color: rgb(72, 160, 237);
+  background-color:#21222c;
   height: 70px;
-  padding: 0 20px;
+  padding: 0 10px;       /* më pak padding që të ruajë hapësirën në ekrane të vegjël */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;           /* gjithmonë 100% */
+  box-sizing: border-box;
 }
 
 /* Logo */
@@ -33,7 +35,7 @@
 
 .links .link:hover,
 .links .link:focus {
-  background-color: rgb(84, 168, 241);
+  background-color: #393a41;
   color: #fff;
 }
 
@@ -164,7 +166,6 @@
     transform: translateX(0);
   }
 }
-
 /* Telefoni (≤425px) → vetëm logo + burger */
 @media screen and (max-width: 425px) {
   .links,
@@ -172,54 +173,15 @@
     display: none !important;
   }
 
-  .menu-header .close-btn img {
-  width: 18px;
-  height: 18px;
-}
+  .navbar-logo {
+    height: 35px; /* logo më e vogël për mobile */
+  }
 
-  /* Sidebar më e gjerë (mbulon më shumë ekranin) */
   .sidebar-menu {
-    width: 40%;
-    padding: 15px;
+    width: 70%;  /* sidebar më i gjerë në telefona */
   }
 
-  /* Menu header -> titulli "Menu" dhe X të jenë sipër */
-  .menu-header {
-    justify-content: flex-start;
-    position: relative;
-    
-  }
-  
-  .menu-header .close-btn img {
-  width: 18px;
-  height: 18px;
-}
-
-  .menu-header h5 {
+  .menu-links a {
     font-size: 16px;
   }
-
-
-  .menu-header .close-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    
-  }
-
-  /* Search bar më i vogël */
-  .menu-search input {
-    font-size: 10px;
-    padding: 5px 10px;
-  }
-
-  .menu-search .input-group-text {
-    padding: 5px 10px;
-  }
-
-  .menu-search {
-    width: 90%;
-    margin: 15px auto;
-  }
 }
-

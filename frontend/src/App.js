@@ -10,6 +10,8 @@ import LogIn from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import HomePage from "./Components/HomePage";
 import CartPage from "./Components/CartPage";
+import AboutUs from "./Components/AboutUs";
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />         
           <Route path="/cart" element={<CartPage/>}/>
+          <Route path="/aboutUs" element={<AboutUs/>}/>
         </Routes>
       <FooterWeb />
     </div>

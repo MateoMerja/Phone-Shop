@@ -5,6 +5,7 @@ import menu from "../images/menu.svg";
 import closeIcon from "../images/close.png";
 import searchIcon from "../images/search.svg";
 import cart from "../images/shopping-cart.png"
+import user from "../images/userNav.png"
 import "../Css/NavigationCss.css";
 const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +37,6 @@ const NavigationBar = () => {
               style={{ height: "170px", width: "180px" }}
             />
           </Navbar.Brand>
-
           {/* Nav + Search (desktop/tablet/laptop) */}
           <Nav className="ms-auto links d-flex align-items-center">
             <InputGroup className="me-3 custom-search" style={{ maxWidth: "200px" }}>
@@ -45,12 +45,6 @@ const NavigationBar = () => {
                 <img src={searchIcon} alt="search" style={{ width: "16px", height: "16px" }} />
               </InputGroup.Text>
             </InputGroup>
-            <Nav.Link href="/" className="link">
-              Home
-            </Nav.Link>
-            <Nav.Link href="/contact-us" className="link">
-              Contact
-            </Nav.Link>
             <Nav.Link href="/login" className="link">
               Log In
             </Nav.Link>

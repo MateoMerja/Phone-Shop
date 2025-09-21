@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import facebook from '../images/facebook.png'; 
-import twitter from '../images/twitter.png'; 
 import instagram from '../images/instagram.png'; 
 import tiktok from '../images/tiktok.png'; 
 import whatsapp from '../images/whatsapp.png'; 
@@ -14,18 +13,18 @@ const ContactUs =()=> {
     e.preventDefault();
     const form = new FormData(e.target);
     const data = Object.fromEntries(form.entries());
-    alert(`Faleminderit, ${data.name || 'mik'}! Mesazhi u dërgua.`);
+    alert(`Thank you , ${data.name}! The message has been sent.`);
     e.target.reset();
   }
-  const [contact,setContact]=useState({
-    firstName:"",
-    email:"",
-    subject:"",
-    message:"",
-  });
-  const handleChange=(e)=>{
-    setContact({...contact,[e.target.name]:e.target.value});
-  }
+  // const [contact,setContact]=useState({
+  //   firstName:"",
+  //   email:"",
+  //   subject:"",
+  //   message:"",
+  // });
+  // const handleChange=(e)=>{
+  //   setContact({...contact,[e.target.name]:e.target.value});
+  // }
 
   return (
     <div className="contact-section py-5">
@@ -109,7 +108,7 @@ const ContactUs =()=> {
                   </Form.Group>
 
                   <div className="d-flex justify-content-between align-items-center">
-                    <Button type="submit" variant="primary" className="btn-animate">Send</Button>
+                    <Button type="submit" className="btn-animate">Send</Button>
                   </div>
                 </Form>
               </Card.Body>

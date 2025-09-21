@@ -30,10 +30,6 @@ body {
   text-align: center;
   transition: transform 0.3s ease;
 }
-.signup-box:hover {
-  transform: translateY(-5px);
-}
-
 .signup-box h2 {
   margin-bottom: 20px;
   color: #2d3436;
@@ -66,12 +62,6 @@ body {
   transition: all 0.3s ease;
   background: #f9f9f9;
 }
-.input-icon input:focus {
-  border-color: #4b7bec;
-  background: #fff;
-  box-shadow: 0 0 5px rgba(75, 123, 236, 0.4);
-}
-
 /* Icons */
 .icon-left {
   position: absolute;
@@ -101,7 +91,7 @@ button.signUp {
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #4b7bec, #00cec9);
+  background: linear-gradient(135deg, #282b33, #079369);
   color: white;
   font-size: 16px;
   font-weight: 500;
@@ -109,33 +99,28 @@ button.signUp {
   transition: 0.3s;
 }
 button.signUp:hover {
-  background: linear-gradient(135deg, #3867d6, #00b894);
+  background: linear-gradient(135deg, #282b33, #17a589);;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Toggle link */
 .toggle-link {
-  color: #4b7bec;
+  color: #666;
   cursor: pointer;
   font-weight: 500;
   transition: 0.3s;
 }
-.toggle-link:hover {
-  color: #00cec9;
-  text-decoration: underline;
-}
-
 .signup-box p > .toggle-link:hover{
-  color: #4b7bec;
+  color: #282828;
   font-weight: 700;
-  text-decoration: none; /* gjithmonë pa underline */
+  text-decoration: Underline; /* gjithmonë pa underline */
   cursor: pointer;
   transition: color 0.3s;
 }
 
 /* Hover ndryshon vetëm ngjyrën */
 .signup-box p > .toggle-link:hover {
-  color: #00cec9;
+  color: #2a2a2a;
 }
 
 /* Responsivitet */
