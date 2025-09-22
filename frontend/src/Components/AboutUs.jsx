@@ -1,6 +1,12 @@
 import React from "react";
 import "../Css/AboutUs.css";
-
+import support from "../images/support.png"
+import ceo from "../images/ceo.png"
+import manager from "../images/manager.png"
+import imageTop from "../images/aboutustop.png"
+import iphone from "../images/iphoneAboutUs.png"
+import laptop from "../images/laptopAboutUs.png"
+import smartwatch from "../images/smartwatchAboutUs.png"
 const AboutUs = () => {
   return (
     <div className="aboutus-container">
@@ -24,7 +30,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="history-img">
-          {/* Example: <img src={storeImg} alt="Our Store" /> */}
+        
         </div>
       </section>
 
@@ -37,6 +43,7 @@ const AboutUs = () => {
           believe everyone deserves access to devices that make life smarter and
           easier.
         </p>
+         <img src={imageTop} alt="Our Store" />
       </section>
 
       {/* What We Offer */}
@@ -44,7 +51,7 @@ const AboutUs = () => {
         <h2>What We Offer</h2>
         <div className="offer-grid">
           <div className="offer-card">
-            {/* Example: <img src={phoneIcon} alt="Phone" /> */}
+             <img src={iphone} alt="Phone" />
             <h3>Smartphones</h3>
             <p>
               Latest smartphones from the most popular brands, with warranty and
@@ -52,7 +59,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="offer-card">
-            {/* Example: <img src={laptopIcon} alt="Laptop" /> */}
+             <img src={laptop} alt="Laptop" />
             <h3>Computers</h3>
             <p>
               Laptops and PCs for work, study, and gaming, equipped with the
@@ -60,7 +67,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="offer-card">
-            {/* Example: <img src={headphonesIcon} alt="Accessories" /> */}
+             <img src={smartwatch} alt="Accessories" />
             <h3>Accessories</h3>
             <p>
               Headphones, keyboards, chargers, smart home devices and much more.
@@ -102,7 +109,7 @@ const AboutUs = () => {
       {/* Team Member 1 */}
       <div className="col-sm-12 col-md-4 mb-4">
         <div className="card h-100 shadow-sm border-0">
-          {/* Example: <img src={ceoImg} className="card-img-top" alt="CEO" /> */}
+          <img src={ceo} className="card-img-top" alt="CEO" />
           <div className="card-body">
             <h5 className="card-title">Arben Hoxha</h5>
             <h6 className="card-subtitle mb-2 text-muted">CEO</h6>
@@ -116,7 +123,7 @@ const AboutUs = () => {
       {/* Team Member 2 */}
       <div className="col-sm-12 col-md-4 mb-4">
         <div className="card h-100 shadow-sm border-0">
-          {/* Example: <img src={marketingImg} className="card-img-top" alt="Marketing Director" /> */}
+          <img src={manager} className="card-img-top" alt="Marketing Director" />
           <div className="card-body">
             <h5 className="card-title">Elira Dervishi</h5>
             <h6 className="card-subtitle mb-2 text-muted">Marketing Director</h6>
@@ -130,7 +137,7 @@ const AboutUs = () => {
       {/* Team Member 3 */}
       <div className="col-sm-12 col-md-4 mb-4">
         <div className="card h-100 shadow-sm border-0">
-          {/* Example: <img src={supportImg} className="card-img-top" alt="Customer Support" /> */}
+          <img src={support} className="card-img-top" alt="Customer Support" />
           <div className="card-body">
             <h5 className="card-title">Kreshnik Meta</h5>
             <h6 className="card-subtitle mb-2 text-muted">Customer Support Manager</h6>

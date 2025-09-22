@@ -90,8 +90,10 @@
   transform: translateY(-5px);
 }
 .offer-card img {
-  width: 60px;
+  height: 100px;
+  width: 150px;
   margin-bottom: 15px;
+  object-fit: contain;
 }
 .offer-card h3 {
   margin-bottom: 10px;
@@ -129,7 +131,23 @@
 .whyus-card h3 {
   margin-bottom: 10px;
 }
+.team-section .card {
+  height: 100%;              /* plotëson lartësinë */
+  display: flex;
+  flex-direction: column;    
+}
 
+.team-section .card-img-top {
+  height: 300px;             /* e bën imazhin me gjatësi fikse */
+  object-fit:contain;         /* pret imazhin pa e deformuar */
+}
+
+.team-section .card-body {
+  flex-grow: 1;              /* e shtyn body që të mbushë hapësirën */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .hero-section h1 {

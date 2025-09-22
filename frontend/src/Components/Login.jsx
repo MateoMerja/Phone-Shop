@@ -24,14 +24,14 @@ const Login = ({ togglePage }) => {
           <div className="input-group">
             <label>Username</label>
             <div className="input-icon">
-              <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}required/>
+              <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
               <img src={userIcon} alt="User" className="icon-left" />
             </div>
           </div>
           <div className="input-group">
             <label>Password</label>
             <div className="input-icon">
-              <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+              <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
               <img src={showPassword ? eyeSlashIcon : eyeIcon} alt="Toggle" className="icon-right" onClick={() => setShowPassword(!showPassword)} />
             </div>
           </div>
