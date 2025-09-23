@@ -5,17 +5,71 @@ import userIcon from "../images/user.png";
 import eyeIcon from "../images/show.png"; 
 import eyeSlashIcon from "../images/hidden.png"; 
 
-const Login = ({ togglePage }) => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Username: ${username}\nPassword: ${password}\nRemember Me: ${rememberMe}`);
-  };
+    alert(`Username: ${username}\nPassword: ${password}\nRemember Me: ${rememberMe}`);};
+  //  const navigate = useNavigate();
+  // const [form, setForm] = useState({ email: "", password: "", remember: false });
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState(null);
+  // const [success, setSuccess] = useState(null);
 
+  // // If a token was already persisted, attach it to axios on mount
+  // useEffect(() => {
+  //   const existing = getAuthToken();
+  //   if (existing) {
+  //     setAuthToken(existing, { persist: true });
+  //   }
+  // }, []);
+
+  // const handleChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
+  //   setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+  // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setError(null);
+  //   setSuccess(null);
+
+  //   const { email, password, remember } = form;
+
+  //   if (!email || !password) {
+  //     setError("Please enter both email and password.");
+  //     return;
+  //   }
+
+  //   setIsLoading(true);
+
+  //   try {
+  //     const base = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  //     const response = await axios.post(`${base}/api/login`, { email, password });
+
+  //     const token = response?.data?.token;
+  //     if (token) {
+  //       setAuthToken(token, { persist: !!remember });
+  //       console.log("Login successful, token stored. token:", token);
+
+  //       setSuccess("Login successful! Redirecting...");
+        
+  //       setTimeout(() => {
+  //         navigate("/");
+  //       }, 1500);
+  //     } else {
+  //       throw new Error("No token returned from server");
+  //     }
+  //   } catch (err) {
+  //     const message = err?.response?.data?.message || err.message || "Login failed";
+  //     setError(message);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
   return (
     <div className="login-component">
       <div className="login-box">
