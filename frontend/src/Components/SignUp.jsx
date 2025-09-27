@@ -16,7 +16,7 @@ const SignUp = ({ togglePage }) => {
   return (
     <div className="signup-container">
       <div className="signup-box">
-        <h2>Sign Up</h2>
+        <h2>Register</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Username</label>

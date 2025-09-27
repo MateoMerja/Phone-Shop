@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState} from "react";
+import axios from "axios"
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import facebook from '../images/facebook.png'; 
 import instagram from '../images/instagram.png'; 
@@ -9,22 +10,22 @@ import map from '../images/map.png';
 import "../Css/ContactUs.css";
 
 const ContactUs =()=> {
-  function handleSubmit(e) {
+  const [contact,setContact]=useState({
+    firstName:"",
+    email:"",
+    subject:"",
+    message:"",
+  });
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    const data = Object.fromEntries(form.entries());
-    alert(`Thank you , ${data.name}! The message has been sent.`);
-    e.target.reset();
+    await axios
+      .post("http://localhost:5000/addContact", contact)
+      .then((res) => console.log("Added contact"))
+      .catch((err) => console.log("Not added contact"));
+  };
+  const handleChange=(e)=>{
+    setContact({...contact,[e.target.name]:e.target.value});
   }
-  // const [contact,setContact]=useState({
-  //   firstName:"",
-  //   email:"",
-  //   subject:"",
-  //   message:"",
-  // });
-  // const handleChange=(e)=>{
-  //   setContact({...contact,[e.target.name]:e.target.value});
-  // }
 
   return (
     <div className="contact-section py-5">
@@ -86,25 +87,25 @@ const ContactUs =()=> {
                     <Col sm={6}>
                       <Form.Group controlId="name">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" name="name" required />
+                        <Form.Control type="text" name="firstName" value={contact.firstName} required />
                       </Form.Group>
                     </Col>
                     <Col sm={6}>
                       <Form.Group controlId="email">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" required  />
+                        <Form.Control type="email" name="email" value={contact.email} required  />
                       </Form.Group>
                     </Col>
                   </Row>
 
                   <Form.Group className="mb-3" controlId="subject">
                     <Form.Label>Subject</Form.Label>
-                    <Form.Control type="text" name="subject" />
+                    <Form.Control type="text" name="subject" value={contact.subject}/>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="message">
                     <Form.Label>Message</Form.Label>
-                    <Form.Control as="textarea" name="message" rows={5} required />
+                    <Form.Control as="textarea" name="message" rows={5}  value={contact.message} required />
                   </Form.Group>
 
                   <div className="d-flex justify-content-between align-items-center">

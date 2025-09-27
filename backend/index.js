@@ -36,13 +36,8 @@ mongoose
   .catch((err) => console.log("DB not connected " + err));
 
 // Therritja
-app.use(contactRoute);
+app.use(contactUsRoute);
 app.use(itemRoute);
-// Test
-app.use("/", (req, res) => {
-  res.send("Hello World");
-});
-
 // Server
 app.listen(5000, () => {
   console.log("Server created");
