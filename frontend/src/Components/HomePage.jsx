@@ -45,7 +45,7 @@ const HomePage =()=> {
   <div className="category-img-wrapper">
     <Card.Img variant="top" src={samsung} className="category-img" />
   </div>
-  <Card.Title>Laptops</Card.Title>
+  <Card.Title>Phones</Card.Title>
   <Button variant="primary">Load More</Button>
 </Card.Body>
             </Card>
@@ -56,7 +56,7 @@ const HomePage =()=> {
   <div className="category-img-wrapper">
     <Card.Img variant="top" src={smartwatchdown} className="category-img" />
   </div>
-  <Card.Title>Laptops</Card.Title>
+  <Card.Title>Tablets</Card.Title>
   <Button variant="primary">Load More</Button>
 </Card.Body>
             </Card>

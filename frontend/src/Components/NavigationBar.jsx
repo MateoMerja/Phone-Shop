@@ -87,9 +87,9 @@ const NavigationBar = () => {
               <li><a href="/about">About</a></li>
               <li><a href="/contact-us">Contact</a></li>
               <li><a href="/login">Log In</a></li>
-              <li><a href="#">Telefona</a></li>
-              <li><a href="#">Tablet</a></li>
-              <li><a href="#">Laptop</a></li>
+              <li><a href="#">Phones</a></li>
+              <li><a href="#">Tablets</a></li>
+              <li><a href="#">Laptops</a></li>
             </ul>           
             <div className="menu-search">
               <InputGroup>
