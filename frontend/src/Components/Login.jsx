@@ -1,75 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Css/Login.css";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import userIcon from "../images/user.png";
+import { setAuthToken, getAuthToken } from "../utils/auth";
 import eyeIcon from "../images/show.png"; 
 import eyeSlashIcon from "../images/hidden.png"; 
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Username: ${username}\nPassword: ${password}\nRemember Me: ${rememberMe}`);};
-  //  const navigate = useNavigate();
-  // const [form, setForm] = useState({ email: "", password: "", remember: false });
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
-  // const [success, setSuccess] = useState(null);
+const navigate = useNavigate();
+const [form, setForm] = useState({ username: "", password: "", remember: false });
+const [isLoading, setIsLoading] = useState(false);
+const [error, setError] = useState(null);
+const [success, setSuccess] = useState(null);
 
-  // // If a token was already persisted, attach it to axios on mount
+  useEffect(() => {
+    const existing = getAuthToken();
+    if (existing) {
+      setAuthToken(existing, { persist: true });
+    }
+  }, []);
+
   // useEffect(() => {
-  //   const existing = getAuthToken();
-  //   if (existing) {
-  //     setAuthToken(existing, { persist: true });
-  //   }
+  //   document.body.classList.add("bg-login-hero");
+  //   return () => document.body.classList.remove("bg-login-hero");
   // }, []);
 
-  // const handleChange = (e) => {
-  //   const { name, value, type, checked } = e.target;
-  //   setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
-  // };
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((p) => ({ ...p, [name]: type === "checkbox" ? checked : value }));
+  };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setError(null);
-  //   setSuccess(null);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
 
-  //   const { email, password, remember } = form;
+    const { username, password, remember } = form;
+    if (!username || !password) return setError("Please enter both username and password.");
 
-  //   if (!email || !password) {
-  //     setError("Please enter both email and password.");
-  //     return;
-  //   }
+    setIsLoading(true);
+    try {
+      const base = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      const res = await axios.post(`${base}/api/login`, { username, password });
 
-  //   setIsLoading(true);
+      console.log("Login response data:", res?.data);
 
-  //   try {
-  //     const base = process.env.REACT_APP_API_URL || "http://localhost:5000";
-  //     const response = await axios.post(`${base}/api/login`, { email, password });
+      const token = res?.data?.token;
+      if (!token) throw new Error("No token returned from server");
 
-  //     const token = response?.data?.token;
-  //     if (token) {
-  //       setAuthToken(token, { persist: !!remember });
-  //       console.log("Login successful, token stored. token:", token);
+      setAuthToken(token, { persist: !!remember });
 
-  //       setSuccess("Login successful! Redirecting...");
-        
-  //       setTimeout(() => {
-  //         navigate("/");
-  //       }, 1500);
-  //     } else {
-  //       throw new Error("No token returned from server");
-  //     }
-  //   } catch (err) {
-  //     const message = err?.response?.data?.message || err.message || "Login failed";
-  //     setError(message);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+      console.log("Stored token:", getAuthToken());
+
+      setSuccess("Logged in — redirecting...");
+      setTimeout(() => navigate("/"), 700);
+    } catch (err) {
+      console.error("Login error:", err);
+      setError(err?.response?.data?.message || err.message || "Login failed");
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <div className="login-component">
       <div className="login-box">
@@ -78,19 +70,19 @@ const Login = () => {
           <div className="input-group">
             <label>Username</label>
             <div className="input-icon">
-              <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+              <input type="text" placeholder="Username" name="username" value={form.username} onChange={handleChange}/>
               <img src={userIcon} alt="User" className="icon-left" />
             </div>
           </div>
           <div className="input-group">
             <label>Password</label>
             <div className="input-icon">
-              <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              <img src={showPassword ? eyeSlashIcon : eyeIcon} alt="Toggle" className="icon-right" onClick={() => setShowPassword(!showPassword)} />
+              <input placeholder="Password" name="password" value={form.password} onChange={handleChange} />
+              <img src={eyeIcon} alt="Toggle" className="icon-right"/>
             </div>
           </div>
           <div className="remember-me">
-            <input type="checkbox" id="rememberMe" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)}/>
+            <input type="checkbox" id="rememberMe"/>
             <label htmlFor="rememberMe" style={{color:"#444"}}>Remember Me</label>
           </div>
           <button type="submit" className="login">Login</button>

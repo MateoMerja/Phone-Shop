@@ -4,7 +4,7 @@ const cors = require("cors");
 const session = require("express-session");
 const app = express();
 const contactRoute = require("./routes/contactRoute.js");
-const itemRoute = require("./routes/itemRoute");
+const authRoute = require('./routes/authRoute.js');
 const path = require("path");
 // Sintaksa
 // app.method("path", (req,res)=>{
@@ -36,8 +36,9 @@ mongoose
   .catch((err) => console.log("DB not connected " + err));
 
 // Therritja
-app.use(contactUsRoute);
-app.use(itemRoute);
+
+app.use('/api', authRoute);
+app.use('/api/contact', contactRoute);
 // Server
 app.listen(5000, () => {
   console.log("Server created");

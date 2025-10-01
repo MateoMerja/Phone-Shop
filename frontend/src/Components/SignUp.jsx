@@ -4,15 +4,31 @@ import { Link } from "react-router-dom";
 import eyeIcon from "../images/show.png";
 import eyeSlashIcon from "../images/hidden.png"; 
 import userIcon from "../images/user.png";
+import axios from "axios";
 const SignUp = ({ togglePage }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Sign Up with\nUsername: ${username}\nPassword: ${password}`);
+   const [register, setRegister] = useState({
+    first_name: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRegister({ ...register, [name]: value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", register);
+    try {
+      const base = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      const response = await axios.post(`${base}/api/register`, register);
+      console.log("Registration successful:", response.data);
+    } catch (error) {
+      console.error("Registration error:", error);
+
+    }
+  };
   return (
     <div className="signup-container">
       <div className="signup-box">
@@ -21,14 +37,14 @@ const SignUp = ({ togglePage }) => {
           <div className="input-group">
             <label>Username</label>
               <div className="input-icon">
-              <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}required/>
+              <input type="text" placeholder="Username" name="first_name" value={register.first_name} onChange={handleChange}/>
               <img src={userIcon} alt="User" className="icon-left" />
             </div>
           </div>
           <div className="input-group">
             <label>Password</label>
               <div className="input-icon">
-              <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+              <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" value={register.password} onChange={handleChange} />
               <img src={showPassword ? eyeSlashIcon : eyeIcon} alt="Toggle" className="icon-right" onClick={() => setShowPassword(!showPassword)} />
             </div>
           </div>

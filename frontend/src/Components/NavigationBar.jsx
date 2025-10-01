@@ -21,7 +21,7 @@ const NavigationBar = () => {
     setTimeout(() => {
       setMenuOpen(false);
       setClosing(false);
-    }, 500); // sa zgjat transition te CSS
+    }, 500); 
   };
 
   return (
