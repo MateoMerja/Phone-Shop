@@ -11,13 +11,14 @@ import SignUp from "./Components/SignUp";
 import HomePage from "./Components/HomePage";
 import CartPage from "./Components/CartPage";
 import AboutUs from "./Components/AboutUs";
-
+import Create from "./CRUD/Create";
+import Read from './CRUD/Read'
 function App() {
   return (
     <div className="App">
       <NavigationBar />
         <Routes>
-           <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -26,6 +27,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />         
           <Route path="/cart" element={<CartPage/>}/>
           <Route path="/aboutUs" element={<AboutUs/>}/>
+          <Route path="/create" element={<Create/>}/>
+          <Route path="/read" element={<Read/>}/>
         </Routes>
       <FooterWeb />
     </div>

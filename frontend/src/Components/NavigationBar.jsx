@@ -6,6 +6,7 @@ import closeIcon from "../images/close.png";
 import searchIcon from "../images/search.svg";
 import cart from "../images/shopping-cart.png"
 import user from "../images/userNav.png"
+
 import "../Css/NavigationCss.css";
 const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,6 +48,12 @@ const NavigationBar = () => {
             </InputGroup>
             <Nav.Link href="/login" className="link">
               Log In
+            </Nav.Link>
+            <Nav.Link href="/create" className="link">
+              Create
+            </Nav.Link>
+             <Nav.Link href="/read" className="link">
+              Read
             </Nav.Link>
             <Navbar.Brand href="/cart" className="d-flex align-items-center">
               <img
